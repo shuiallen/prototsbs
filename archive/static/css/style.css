@@ -1,0 +1,53 @@
+body {  
+    background-color: #ddd4c4;
+}
+
+body.custom-background {
+  background-color: #cb4741; 
+  background-image: url('../images/pattern-bg.png');
+  background-repeat: repeat;
+  background-position: top center;
+  background-attachment: fixed;
+}
+  
+img.logo {
+    width : 100%;
+    height : auto;
+    max-width : 100%;
+}
+
+.navigation ul {
+  font: bold 11px "Helvetica Neue", Helvetica, Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  width: 200px;
+  
+  list-style-type: none;
+  border: 1px solid #555;
+  
+}
+
+.navigation a {
+    display: block;
+    color: #000;
+    padding: 8px 0 8px 16px;
+    text-decoration: none;
+}
+
+.navigation a:hover {
+    background-color: #555;
+    color: white;
+}
+
+.navigation li {
+    text-align: center;
+    border-bottom: 1px solid #555;
+}
+
+.navigation li:first-child a {
+  border-radius: 4px 0 0 4px;
+}
+.navigation li:last-child {
+  border-bottom: none;
+}
+

@@ -1,0 +1,35 @@
+{% load staticfiles %}
+<!doctype html>
+    <html>
+        <head>
+            <title>
+                {% block title %}
+                    Torah Stitch by Stitch Archive Prototype
+                {% endblock title %}
+            </title>
+            <link rel="stylesheet" href="{% static 'css/style.css' %}">
+            {% block header %}
+                <img class="logo"
+                     src="{% static 'images/header-artwork-for-wp3.jpg' %}"
+                     alt="TSBS Banner"
+                /img>
+            {% endblock header %}
+        </head>
+        <body class="custom-background">
+            <header>
+                <nav class="navigation">
+                    <ul>
+                    <li><a href="{% url 'panel_list' %}">Panels</a></li><!--
+                 --><li><a href="#">Stitchers</a></li><!--
+                 --><li><a href="#">Stitching Records</a></li>
+                    </ul>
+                </nav>
+            </header>
+            <div style="margin-left:25%;padding:1px 16px;height:1000px;">
+                {% block content %}
+                {% endblock content %}
+            </div>
+            {% block footer %}
+            {% endblock footer %}
+        </body>
+    </html>

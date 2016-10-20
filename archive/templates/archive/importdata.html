@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% block title %}
+    Import data from spreadsheet - {{ block.super }} 
+{% endblock title %}
+ 
+{% block header %}
+    {{ block.super }}
+{% endblock header %}
+ 
+{% block content %}
+    <!-- List of uploaded documents -->
+    {% if documents %}  
+        <form action="{% url 'importdata' %}" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <ul>
+            {% for document in documents %}
+                <li><a href="{{ document.datafile.url }}">{{ document.datafile.name }}</a>
+                   <p><input type="submit" value="Import" /></p>
+               </li>
+            {% endfor %}
+            </ul>
+        </form>
+    {% else %}
+        <p>No documents.</p>
+    {% endif %}
+
+    
+{% endblock content %}
+
+{% block footer %}
+    Footer?
+{% endblock footer %}

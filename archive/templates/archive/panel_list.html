@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block title %}
+    Panels - {{ block.super }} 
+{% endblock title %}
+ 
+{% block header %}
+    Display an image then
+    {{ block.super }}
+{% endblock header %}
+ 
+{% block content %}
+    <div>
+        <h1><a href="{% url 'panel_list' %}">Panels</a></h1>
+    </div>
+    {% for panel in panels %}
+        <div>
+            <p>{{ panel.origPanelId }} :
+               {{ panel.book }}
+               {{ panel.chapterStart }}:{{ panel.verseStart }} -
+               {{ panel.chapterEnd }}:{{ panel.verseEnd }}</p>
+        </div>
+    {% endfor %}
+{% endblock content %}
+
+{% block footer %}
+    Footer?
+{% endblock footer %}
